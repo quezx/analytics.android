@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="BASE_URL_API">https://staging-api.quezx.com/api</string>
+    <string name="WEB_BASE_URL">https://staging-manage.quezx.com</string>
+    <string name="DEEP_LINKING_URL_ACCOUNTS">accounts.quezx.com</string>
+    <string name="DEEP_LINKING_URL_MANAGE">manage.quezx.com</string>
+    <string name="DEEP_LINKING_URL_CLICK">click.quezx.com</string>
+
+    <string name="test_name"></string>
+    <string name="test_applicant_score"></string>
+    <string name="test_client_name"></string>
+    <string name="test_client_username"></string>
+    <string name="test_role"></string>
+    <string name="test_jd_priority"></string>
+    <string name="test_careerpath"></string>
+    <string name="test_state_name"></string>
+    <string name="test_time_range"></string>
+    <string name="test_follow_up_state"></string>
+    <string name="test_time"></string>
+    <string name="test_message"></string>
+    <string name="test_designation"></string>
+    <string name="test_mobile"></string>
+    <string name="test_current_company"></string>
+    <string name="test_qualification"></string>
+    <string name="test_location"></string>
+    <string name="test_notice_period"></string>
+    <string name="test_ctc"></string>
+    <string name="test_experience"></string>
+    <string name="test_experience_range"></string>
+    <string name="test_ctc_range"></string>
+    <string name="test_address"></string>
+    <string name="test_contact_name"></string>
+    <string name="test_contact_number"></string>
+    <string name="test_client_info"></string>
+    <string name="test_client_role_location"></string>
+</resources>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#509EE3</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#B3B5B7</color>
+    <color name="orange">#EF8B11</color>
+    <color name="transparent_blue">#bb205081</color>
+    <color name="button_login_green">#5DC95E</color>
+    <color name="light_gray">#cecece</color>
+    <color name="white">#ffffff</color>
+    <color name="progress_bar_transparent_background">#bbacacac</color>
+    <array name="progressbar">
+        <item>@color/orange</item>
+        <item>@color/transparent_blue</item>
+        <item>@color/colorPrimaryDark</item>
+        <item>@color/button_login_green</item>
+    </array>
+</resources>
