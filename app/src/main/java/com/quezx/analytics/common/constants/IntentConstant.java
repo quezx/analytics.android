@@ -16,4 +16,9 @@ public class IntentConstant {
 	public static final String STATE = "12";
 	public static final String APPLICANT = "13";
 	public static final String INDEX = "14";
+	public static final String CHANGEDASHBOARDDATA = "15";
+	public static final int ACTIVITYRESULTDATA = 16;
+	public static final String REPORTID = "17";
+	public static final String QUESTIONID = "18";
+
 }

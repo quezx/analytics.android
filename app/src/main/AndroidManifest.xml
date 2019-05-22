@@ -15,8 +15,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.user.LoginActivity"></activity>
-        <activity android:name=".ui.activity.LauncherActivity" >
+        <activity android:name=".ui.activity.AddCategory"></activity>
+        <activity android:name=".ui.activity.DetailReportPage" />
+        <activity android:name=".ui.activity.ShareDashboard" />
+        <activity android:name=".ui.activity.AddReports" />
+        <activity android:name=".ui.activity.ReportTypeActivity" />
+        <activity android:name=".ui.activity.ChangeDashboards" />
+        <activity android:name=".ui.user.LoginActivity" />
+        <activity android:name=".ui.activity.LauncherActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -35,7 +41,7 @@
 
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name"/>
+            android:label="@string/app_name" />
     </application>
 
 </manifest>

@@ -7,8 +7,11 @@
     <color name="transparent_blue">#bb205081</color>
     <color name="button_login_green">#5DC95E</color>
     <color name="light_gray">#cecece</color>
+    <color name="border_light_gray">#F0F1F2</color>
     <color name="white">#ffffff</color>
     <color name="progress_bar_transparent_background">#bbacacac</color>
+    <color name="border_gray">#B3B5B7</color>
+    <color name="titleColor">#6D6E71</color>
     <array name="progressbar">
         <item>@color/orange</item>
         <item>@color/transparent_blue</item>

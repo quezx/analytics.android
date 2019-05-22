@@ -15,4 +15,7 @@
     <style name="DialogTheme" parent="Theme.AppCompat.Light.Dialog">
         <item name="colorAccent">@color/colorPrimary</item>
     </style>
+    <style name="CheckBoxTheme">
+        <item name="colorAccent">#509EE3</item>
+    </style>
 </resources>

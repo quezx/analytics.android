@@ -55,12 +55,8 @@ dependencies {
     // Common Utils
     implementation group: 'commons-io', name: 'commons-io', version: '2.5'
     //Retrofit
-    implementation('com.squareup.retrofit2:retrofit:2.1.0') {
-        exclude group: 'com.google.guava'
-    }
-    implementation('com.squareup.retrofit:converter-gson:2.0.0-beta2') {
-        exclude group: 'com.google.guava'
-    }
+    implementation 'com.squareup.retrofit2:retrofit:2.3.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
     // branch.io
     implementation('io.branch.sdk.android:library:2.4.5') {
         exclude module: 'answers-shim'

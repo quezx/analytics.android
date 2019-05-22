@@ -14,7 +14,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/title_dashboard"
-        android:textColor="@color/colorPrimary"
+        android:textColor="@color/titleColor"
         android:layout_marginLeft="@dimen/margin_10dp"
         android:textSize="@dimen/toolbar_text"/>
 </LinearLayout>

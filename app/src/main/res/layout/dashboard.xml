@@ -33,6 +33,7 @@
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
     <LinearLayout
+        android:id="@+id/changeDashboard"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -46,19 +47,21 @@
         android:background="@color/colorPrimary"
         >
         <TextView
+            android:id="@+id/dashboard_name"
             android:layout_marginLeft="@dimen/margin_10dp"
             android:layout_weight="3"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Central Dashboard"
+            android:text="@string/loading"
             android:textColor="@color/white"
             android:textSize="@dimen/normal_text"
-            />
+            android:layout_marginStart="@dimen/margin_10dp" />
         <ImageView
             android:src="@drawable/ic_keyboard_arrow_right_white_24dp"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:layout_gravity="end"/>
+            android:layout_gravity="end"
+            android:contentDescription="@string/title_dashboard" />
 
 
     </LinearLayout>
@@ -69,6 +72,26 @@
         android:layout_marginLeft="@dimen/margin_10dp"
         android:layout_marginRight="@dimen/margin_10dp"
         />
+        <RelativeLayout
+            android:id="@+id/progressBar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:visibility="gone">
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|center_vertical|center_horizontal"
+                android:background="@drawable/gray_cirle_border"
+                android:indeterminateDrawable="@drawable/progress_icon"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </RelativeLayout>
     </LinearLayout>
     <include layout="@layout/progress_bar_transparent" />
 </android.support.design.widget.CoordinatorLayout>

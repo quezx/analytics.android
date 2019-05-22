@@ -4,22 +4,31 @@ import com.quezx.analytics.common.helper.JsonConverter;
 import com.quezx.analytics.common.helper.SharedPreferencesUtility;
 import com.quezx.analytics.connectivity.AnalyticsConnection;
 import com.quezx.analytics.connectivity.RetroFitConnector;
-import com.squareup.okhttp.Cache;
+import okhttp3.Cache;
 
 import com.quezx.analytics.App;
 import com.quezx.analytics.common.constants.EndPoints;
-import com.squareup.okhttp.OkHttpClient;
+
+
+import java.util.ArrayList;
+import java.util.List;
 
 import dagger.Module;
 import dagger.Provides;
-import retrofit.GsonConverterFactory;
-import retrofit.Retrofit;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 @Module
 public class InternetModule {
     String baseUrl;
+    private final String qanalyticsURL;
+    private final String accountsURL;
 
-    public InternetModule() { this.baseUrl = EndPoints.BASE_URL;  }
+    public InternetModule() {
+        this.qanalyticsURL = EndPoints.ANALYTICSURL;
+        this.baseUrl = EndPoints.BASE_URL;
+        this.accountsURL = EndPoints.ACCOUNTSURL;
+    }
 
     @Provides
     Cache provideOkHttpCache(App application) {
@@ -28,31 +37,30 @@ public class InternetModule {
         return new Cache(application.getCacheDir(),cacheSize);
     }
 
+
     @Provides
-    OkHttpClient provideOkHttpClient(Cache cache) {
-        OkHttpClient client = new OkHttpClient();
-        client.setCache(cache);
-        return client;
+    List<Retrofit.Builder> provideRetroFitBuilder (JsonConverter gson) {
+        List<Retrofit.Builder> list = new ArrayList<>();
+        list.add(new Retrofit.Builder().addConverterFactory(GsonConverterFactory.create(gson.getGson())).baseUrl(baseUrl));
+        list.add(new Retrofit.Builder().addConverterFactory(GsonConverterFactory.create(gson.getGson())).baseUrl(qanalyticsURL));
+        list.add(new Retrofit.Builder().addConverterFactory(GsonConverterFactory.create(gson.getGson())).baseUrl(accountsURL));
+        return list;
     }
 
     @Provides
-    Retrofit.Builder provideRetroFitBuilder (JsonConverter gson, OkHttpClient okHttpClient) {
-        return new Retrofit.Builder()
-                .addConverterFactory(GsonConverterFactory.create(gson.getGson()))
-                .baseUrl(baseUrl)
-                .client(okHttpClient);
+    List<RetroFitConnector> provideRetrofitConnector(Cache cache, List<retrofit2.Retrofit.Builder> builders, SharedPreferencesUtility spUtility) {
+        List<RetroFitConnector> list = new ArrayList<>();
+        for (retrofit2.Retrofit.Builder builder : builders) {
+            list.add(new RetroFitConnector(cache, builder, spUtility));
+        }
+        return list;
     }
 
-    @Provides
-    RetroFitConnector provideRetrofitConnctor(OkHttpClient okHttpClient,
-                                              Retrofit.Builder builder) {
-        return new RetroFitConnector(okHttpClient,builder);
-    }
 
     @Provides
-    AnalyticsConnection provideAnalyticsConnection(RetroFitConnector connector, JsonConverter jsonConverter,
-                                                   SharedPreferencesUtility sharedPreferencesUtility){
-        return new AnalyticsConnection(connector, jsonConverter, sharedPreferencesUtility);
+    AnalyticsConnection provideAnalyticsConnection(App app, List<RetroFitConnector> connectors, JsonConverter gson, SharedPreferencesUtility
+            SPUtility) {
+        return new AnalyticsConnection(app, connectors, gson, SPUtility);
     }
 
 }

@@ -20,6 +20,7 @@ import android.support.v7.widget.AppCompatEditText;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 
@@ -41,6 +42,9 @@ public class LoginActivity extends AppCompatActivity {
     AppCompatEditText password;
     @BindView(R.id.progress_bar)
     View progressBar;
+
+    @BindView(R.id.googleSignIn)
+    LinearLayout googleSignIn;
 
    @Inject
     AnalyticsConnection analyticsConnection;
@@ -102,6 +106,11 @@ public class LoginActivity extends AppCompatActivity {
                 return false;
             }
         });
+    }
+
+    @OnClick(R.id.googleSignIn)
+    public void onClickGoogle(){
+        startActivity(new Intent(getApplicationContext(),MainActivity.class));
     }
 
     @OnClick(R.id.login)

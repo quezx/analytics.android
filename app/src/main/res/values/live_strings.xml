@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="BASE_URL_API">https://staging-api.quezx.com/api</string>
+    <string name="BASE_URL_API">https://staging-api.quezx.com/api/</string>
     <string name="WEB_BASE_URL">https://staging-manage.quezx.com</string>
     <string name="DEEP_LINKING_URL_ACCOUNTS">accounts.quezx.com</string>
     <string name="DEEP_LINKING_URL_MANAGE">manage.quezx.com</string>
     <string name="DEEP_LINKING_URL_CLICK">click.quezx.com</string>
+    <string name="ANALYTICS_URL">https://staging-analytics.quezx.com/api/</string>
+    <string name="ACCOUNTS_URL">https://staging-accounts.quezx.com/</string>
 
     <string name="test_name"></string>
     <string name="test_applicant_score"></string>

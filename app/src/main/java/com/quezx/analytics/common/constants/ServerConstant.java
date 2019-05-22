@@ -24,5 +24,6 @@ public class ServerConstant {
 	public static final String POSITION_STATE_HOLD = "HOLD";
 	public static final String POSITION_STATE_REJECTED = "REJECTED";
 	public static final String POSITION_STATE_ALL = "ALL";
+	public static final String METABASE_URL = "https://marqmeta.quezx.com";
 
 }
