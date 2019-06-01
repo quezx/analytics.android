@@ -37,4 +37,5 @@
     <string name="add_report_to">Add Report to</string>
     <string name="save">Save</string>
     <string name="cancel">Cancel</string>
+    <string name="clicktoselect">No Default DashBoard Selected. Click to Select</string>
 </resources>

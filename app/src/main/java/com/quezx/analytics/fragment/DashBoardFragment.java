@@ -32,6 +32,7 @@ import com.quezx.analytics.common.constants.ServerConstant;
 import com.quezx.analytics.connectivity.AnalyticsConnection;
 import com.quezx.analytics.listener.ResultCallBack;
 import com.quezx.analytics.model.UserDashBoard;
+import com.quezx.analytics.model.innerModel.Dashboard;
 import com.quezx.analytics.model.innerModel.UserDashBoardData;
 import com.quezx.analytics.ui.activity.ChangeDashboards;
 import com.quezx.analytics.ui.activity.ReportTypeActivity;
@@ -99,15 +100,23 @@ public class DashBoardFragment extends Fragment {
         @Override
         public void onResultCallBack(UserDashBoard object, Exception e) {
             listofUserDashboard = object;
+            Dashboard dashboard = new Dashboard();
             for (int i = 0; i < object.getData().size(); i++) {
                 if (object.getData().get(i).getIs_default()) {
                     dashBoardData = object.getData().get(i);
                 }
             }
 
+            if (dashBoardData.getDashboard() !=null) {
+                webView.setVisibility(View.VISIBLE);
+                getDashboardURL(dashBoardData.getDashboard().getDId(), dashBoardData.getDashboard().getDashboard_id());
+                dashboard_name.setText(dashBoardData.getDashboard().getName());
+            }else {
+               webView.setVisibility(View.GONE);
+               dashboard_name.setText(getString(R.string.clicktoselect));
+            }
 
-            getDashboardURL(dashBoardData.getDashboard().getDId(), dashBoardData.getDashboard().getDashboard_id());
-            dashboard_name.setText(dashBoardData.getDashboard().getName());
+
         }
     };
 

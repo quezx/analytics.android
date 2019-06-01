@@ -149,6 +149,18 @@ public class AddReports extends AppCompatActivity {
     }
 
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        switch (id) {
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
 
     private void setUpMenuComponent() {
         if (getSupportActionBar() != null) {
@@ -171,6 +183,11 @@ public class AddReports extends AppCompatActivity {
     public void add(){
 
         ArrayListIds arrayListIds = new ArrayListIds(listofSelectedIds);
-        connection.postReportCategory(reportId,arrayListIds,reportCategoryResultCallBack);
+        if (listofSelectedIds.size() == 0) {
+            Toast.makeText(this, "Please select Something", Toast.LENGTH_SHORT).show();
+        }else {
+            connection.postReportCategory(reportId,arrayListIds,reportCategoryResultCallBack);
+        }
+
     }
 }

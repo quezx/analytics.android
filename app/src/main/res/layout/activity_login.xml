@@ -54,6 +54,11 @@
                     android:layout_height="wrap_content"
                     android:imeOptions="actionNext"
                     android:maxLines="1"
+                    android:layout_marginLeft="@dimen/margin_10dp"
+                    android:layout_marginStart="@dimen/margin_10dp"
+                    android:layout_marginRight="@dimen/margin_10dp"
+                    android:layout_marginEnd="@dimen/margin_10dp"
+                    android:text="Nijhawan.S-at-mahindra.com@quezx.in"
                     android:background="@android:color/transparent"
                     android:textSize="@dimen/normal_text"/>
 
@@ -81,6 +86,11 @@
                     android:layout_height="wrap_content"
                     android:imeOptions="actionDone"
                     android:inputType="textPassword"
+                    android:layout_marginLeft="@dimen/margin_10dp"
+                    android:layout_marginStart="@dimen/margin_10dp"
+                    android:layout_marginRight="@dimen/margin_10dp"
+                    android:layout_marginEnd="@dimen/margin_10dp"
+                    android:text="@murtlap"
                     android:background="@android:color/transparent"
                     android:maxLines="1"
                     android:textSize="@dimen/normal_text"/>
@@ -105,6 +115,7 @@
                 android:gravity="center"
                 android:textSize="@dimen/small_text"
                 android:layout_marginTop="@dimen/margin_20dp"
+                android:layout_marginBottom="@dimen/margin_20dp"
                 android:text="@string/or"/>
 
             <LinearLayout
@@ -113,19 +124,20 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:paddingTop="@dimen/margin_5dp"
-                android:paddingBottom="@dimen/margin_5dp"
+                android:paddingTop="@dimen/margin_10dp"
+                android:paddingBottom="@dimen/margin_10dp"
                 android:background="@drawable/focus_edittext"
                 >
                 <ImageView
                     android:src="@drawable/googleicon"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp" />
+                    android:layout_width="30dp"
+                    android:layout_height="30dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/signinwithgoogle"
+                    android:layout_marginLeft="@dimen/margin_5dp"
                     />
             </LinearLayout>
             <android.support.v7.widget.AppCompatTextView
